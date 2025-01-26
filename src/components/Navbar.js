@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaHome, FaUser, FaFolderOpen, FaPhone } from 'react-icons/fa';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
-        <Link className="navbar-brand" to="/">Home</Link>
+        <Link className="navbar-brand" to="/">
+          <FaHome className="me-2" /> Home
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,13 +23,19 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
+              <Link className="nav-link" to="/about">
+                <FaUser className="me-2" /> About
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/projects">Projects</Link>
+              <Link className="nav-link" to="/projects">
+                <FaFolderOpen className="me-2" /> Projects
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact</Link>
+              <Link className="nav-link" to="/contact">
+                <FaPhone className="me-2" /> Contact
+              </Link>
             </li>
           </ul>
         </div>

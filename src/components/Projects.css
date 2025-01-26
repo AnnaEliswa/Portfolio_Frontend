@@ -1,74 +1,83 @@
-/* Projects.css */
-
 .projects-container {
-    background-color: #fef8e7; /* Light cream background */
-    color: #4a4a4a; /* Dark gray text */
-    padding: 40px 20px;
-  }
-  
+  background-color: #fef8e7; /* Light cream background */
+  color: #6d4c41; /* Dark gray text */
+  padding: 40px 20px;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  color: #6d4c41; /* Warm brown color */
+  margin-bottom: 40px;
+}
+
+.card {
+  border: none;
+  background-color: #f4e3cf; /* Beige background */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure the card takes up full width in the container */
+  max-width: 350px; /* Increased width for cards */
+  height: 400px; /* Set a fixed height for the cards */
+  display: flex;
+  flex-direction: column; /* Keep the card content stacked vertically */
+}
+
+.card-img-top {
+  height: 200px; /* Fixed height for image */
+  object-fit: cover;
+}
+
+.card-body {
+  background-color: #f4e3cf; /* Beige background */
+  padding: 20px;
+  text-align: center;
+  flex: 1; /* Ensure the body content takes up remaining space */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #7d6763; /* Warm brown */
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  color: #7d6763; /* Subtle warm gray */
+  margin-top: 10px;
+}
+
+.card-body:hover {
+  background-color: #d7bba8; /* Hover effect on card body */
+  color: #fff;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Ensure cards wrap on small screens */
+}
+
+@media (max-width: 768px) {
   .projects-title {
-    font-size: 2.5rem;
-    color: #6d4c41; /* Warm brown color */
-    margin-bottom: 40px;
+    font-size: 2rem;
   }
-  
-  .card {
-    border: none;
-    background-color: #f4e3cf; /* Beige background */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-img-top {
-    max-height: 200px;
-    object-fit: cover;
-  }
-  
-  .card-body {
-    background-color: #f4e3cf; /* Beige background */
-    padding: 20px;
-    text-align: center;
-  }
-  
+
   .card-title {
-    font-size: 1.5rem;
-    color: #6d4c41; /* Warm brown */
-    font-weight: 600;
+    font-size: 1.2rem;
   }
-  
+
   .card-text {
-    font-size: 1.1rem;
-    color: #7d6763; /* Subtle warm gray */
-    margin-top: 10px;
+    font-size: 1rem;
   }
-  
-  .card-body:hover {
-    background-color: #d7bba8; /* Hover effect on card body */
-    color: #fff;
+
+  .card-body {
+    padding: 15px;
   }
-  
-  .row {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+
+  .card {
+    max-width: 100%; /* Ensure cards take up full width on small screens */
+    height: auto; /* Allow height to adjust for small screens */
   }
-  
-  @media (max-width: 768px) {
-    .projects-title {
-      font-size: 2rem;
-    }
-  
-    .card-title {
-      font-size: 1.2rem;
-    }
-  
-    .card-text {
-      font-size: 1rem;
-    }
-  
-    .card-body {
-      padding: 15px;
-    }
-  }
-  
+}
