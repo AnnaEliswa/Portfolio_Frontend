@@ -90,13 +90,69 @@ footer a:hover {
   background-color: #faf3e0; /* Light cream background */
 }
 
-/* Media Queries */
+/* Welcome Section Animations */
+.welcome-container {
+  display: flex;
+  flex-direction: column; /* Ensure sections are stacked vertically */
+  justify-content: flex-start; /* Align the items to the top */
+  padding: 2rem; /* Adds some padding for better spacing */
+}
+
+.left-side, .right-side {
+  flex: 1;
+}
+
+.welcome-text {
+  font-size: 5rem; /* Increased font size for 'Welcome to My Portfolio' */
+  color: #6d4c41; /* Warm brown */
+  animation: fadeInUp 1.5s ease-out forwards;
+  margin-top: 3rem; /* Adds space at the top */
+}
+
+.description {
+  font-size: 1.35rem; /* Increased size for description */
+  color: #7d6763; /* Warm gray */
+  opacity: 0;
+  animation: fadeInUp 2s ease-out forwards 1.5s; /* Same animation as welcome text */
+  margin-top: 2rem; /* Adds space between the two text blocks */
+  line-height: 1.6; /* Spreads the description across multiple lines */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Media Queries for responsiveness */
 @media (max-width: 768px) {
+  .welcome-container {
+    flex-direction: column; /* Stack the content vertically on smaller screens */
+    align-items: center; /* Center align the content */
+    height: auto;
+    padding: 1rem;
+  }
+
   .display-3 {
     font-size: 3rem; /* Adjusted size for smaller screens */
   }
 
-  .lead {
-    font-size: 1.25rem; /* Adjusted size for smaller screens */
+  .welcome-text {
+    font-size: 4rem; /* Adjusted size for 'Welcome to My Portfolio' */
+    margin-top: 2rem; /* Adjusted top margin */
+  }
+
+  .description {
+    font-size: 1.2rem; /* Adjusted size for description */
+    margin-top: 2rem; /* Adds space between the two texts */
   }
 }
