@@ -1,42 +1,47 @@
 /* General Styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #faf3e0; /* Light cream color as the background */
-  color: #4a4a4a; /* Neutral dark gray text */
+  background-color: #0d1b2a; /* Dark blue as the background */
+  color: #e0e1dd; /* Silver text */
   margin: 0;
   padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
-  color: #6d4c41; /* Warm brown color for headings */
+  color: #1b263b; /* Deep navy blue for headings */
 }
 
 p {
-  color: #5f5f5f; /* Medium gray for paragraph text */
+  color: #778da9; /* Muted silver-blue for paragraph text */
 }
 
 /* Navbar */
 .navbar {
-  background-color: #f4e3cf; /* Beige navbar */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #1b263b; /* Deep navy blue for the navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .navbar-brand {
   font-weight: 600;
-  color: #6d4c41 !important; /* Warm brown */
+  color: #e0e1dd !important; /* Silver */
   font-size: 1.5rem;
 }
 
 .nav-link {
-  color: #6d4c41 !important; /* Warm brown */
+  color: #e0e1dd !important; /* Silver */
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #9c786c !important; /* Slightly lighter brown for hover */
+  color: #778da9 !important; /* Muted silver-blue for hover */
   text-decoration: underline;
+}
+
+/* Navbar Toggler Icon */
+.navbar-toggler-icon {
+  background-color: #fff; /* White color for hamburger icon */
 }
 
 /* Main Content */
@@ -46,48 +51,48 @@ p {
 
 .display-3 {
   font-size: 4rem; /* Increased size for 'Welcome to My Portfolio' */
-  color: #6d4c41; /* Warm brown */
+  color: #e0e1dd; /* Silver */
 }
 
 .lead {
   font-size: 1.5rem; /* Increased size for 'Hi, I am Anna' */
-  color: #7d6763; /* Subtle warm gray */
+  color: #a8b5c3; /* Soft blue-gray */
 }
 
 a.btn {
-  background-color: #d7bba8; /* Creamy button color */
-  color: #fff !important;
+  background-color: #415a77; /* Steel blue for button */
+  color: #e0e1dd !important; /* Silver text */
   border: none;
   transition: background-color 0.3s ease;
 }
 
 a.btn:hover {
-  background-color: #bc9b8b; /* Slightly darker cream */
+  background-color: #274c77; /* Darker steel blue */
 }
 
 /* Footer */
 footer {
-  background-color: #6d4c41; /* Warm brown */
-  color: #fef8e7; /* Light cream text */
+  background-color: #1b263b; /* Deep navy blue */
+  color: #e0e1dd; /* Silver text */
 }
 
 footer a {
-  color: #fef8e7 !important;
+  color: #e0e1dd !important;
   transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: #d7bba8 !important; /* Creamy hover color */
+  color: #415a77 !important; /* Steel blue hover color */
 }
 
 /* Text color for 'Welcome' heading */
 .text-main {
-  color: #6d4c41 !important; /* Warm brown */
+  color: #e0e1dd !important; /* Silver */
 }
 
 /* Custom background for main section */
 .bg-custom {
-  background-color: #faf3e0; /* Light cream background */
+  background-color: #0d1b2a; /* Dark blue background */
 }
 
 /* Welcome Section Animations */
@@ -104,14 +109,14 @@ footer a:hover {
 
 .welcome-text {
   font-size: 5rem; /* Increased font size for 'Welcome to My Portfolio' */
-  color: #6d4c41; /* Warm brown */
+  color: #e0e1dd; /* Silver */
   animation: fadeInUp 1.5s ease-out forwards;
   margin-top: 3rem; /* Adds space at the top */
 }
 
 .description {
   font-size: 1.35rem; /* Increased size for description */
-  color: #7d6763; /* Warm gray */
+  color: #778da9; /* Muted silver-blue */
   opacity: 0;
   animation: fadeInUp 2s ease-out forwards 1.5s; /* Same animation as welcome text */
   margin-top: 2rem; /* Adds space between the two text blocks */

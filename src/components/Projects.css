@@ -1,24 +1,24 @@
 .projects-container {
-  background-color: #fef8e7; /* Light cream background */
-  color: #6d4c41; /* Dark gray text */
+  background-color: #0d1b2a; /* Dark blue background */
+  color: #e0e1dd; /* Silver text */
   padding: 40px 20px;
 }
 
 .projects-title {
   font-size: 2.5rem;
-  color: #6d4c41; /* Warm brown color */
+  color: #e0e1dd; /* Silver */
   margin-bottom: 40px;
 }
 
 .card {
   border: none;
-  background-color: #f4e3cf; /* Beige background */
+  background-color: #1b263b; /* Deep navy blue */
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   width: 100%; /* Ensure the card takes up full width in the container */
   max-width: 350px; /* Increased width for cards */
-  height: 400px; /* Set a fixed height for the cards */
+  height: 400px; /* Fixed height for the cards */
   display: flex;
   flex-direction: column; /* Keep the card content stacked vertically */
 }
@@ -29,7 +29,7 @@
 }
 
 .card-body {
-  background-color: #f4e3cf; /* Beige background */
+  background-color: #1b263b; /* Deep navy blue */
   padding: 20px;
   text-align: center;
   flex: 1; /* Ensure the body content takes up remaining space */
@@ -37,19 +37,23 @@
 
 .card-title {
   font-size: 1.5rem;
-  color: #7d6763; /* Warm brown */
+  color: #ffffff !important; /* Explicit white color for the project name */
   font-weight: 600;
 }
 
 .card-text {
   font-size: 1.1rem;
-  color: #7d6763; /* Subtle warm gray */
+  color: #e0e1dd; /* Silver */
   margin-top: 10px;
 }
 
 .card-body:hover {
-  background-color: #d7bba8; /* Hover effect on card body */
-  color: #fff;
+  background-color: #415a77; /* Steel blue on hover */
+  color: #fff; /* Ensure the rest of the text remains visible */
+}
+
+.card-body:hover .card-title {
+  color: #ffffff !important; /* Ensure the project name color does not change on hover */
 }
 
 .row {
@@ -59,6 +63,7 @@
   flex-wrap: wrap; /* Ensure cards wrap on small screens */
 }
 
+/* Media Queries for smaller screens */
 @media (max-width: 768px) {
   .projects-title {
     font-size: 2rem;
@@ -66,6 +71,7 @@
 
   .card-title {
     font-size: 1.2rem;
+    color: #ffffff !important; /* Explicit white color for smaller screens */
   }
 
   .card-text {
@@ -79,5 +85,24 @@
   .card {
     max-width: 100%; /* Ensure cards take up full width on small screens */
     height: auto; /* Allow height to adjust for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 1.8rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    color: #ffffff !important; /* Ensure visibility on very small screens */
+  }
+
+  .card-body {
+    padding: 10px;
+  }
+
+  .card {
+    max-width: 100%; /* Full width for very small screens */
   }
 }

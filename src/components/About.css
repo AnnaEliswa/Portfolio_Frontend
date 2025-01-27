@@ -1,25 +1,23 @@
-/* About.css */
-
 /* General Styles */
 .about-container {
-  background-color: #fef8e7; /* Light cream background */
-  color: #4a4a4a; /* Dark gray text */
+  background-color: #0d1b2a; /* Dark blue background */
+  color: #e0e1dd; /* Silver text */
   padding: 40px 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for contrast */
 }
 
 .about-title {
   text-align: center;
   font-size: 1.75rem;
-  color: #6d4c41; /* Warm brown color */
+  color: #e0e1dd; /* Silver */
   margin-bottom: 30px;
 }
 
 .about-description {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #6f4f32; /* Darker brownish-gray */
+  color: #a8b5c3; /* Soft blue-gray */
   margin-bottom: 40px;
 }
 
@@ -30,7 +28,7 @@
 
 .section-title {
   font-size: 1.75rem;
-  color: #6d4c41; /* Warm brown */
+  color: #e0e1dd; /* Silver */
   margin-bottom: 15px;
 }
 
@@ -40,22 +38,22 @@
 }
 
 .education-item {
-  background-color: #f4e3cf; /* Beige background */
+  background-color: #1b263b; /* Deep navy blue background */
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .education-item h5 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #6d4c41; /* Warm brown */
+  color: #e0e1dd; /* Silver */
 }
 
 .education-details {
   font-size: 1rem;
-  color: #7d6763; /* Subtle warm gray */
+  color: #778da9; /* Muted silver-blue */
 }
 
 /* Skills Section */
@@ -70,17 +68,17 @@
 
 .skills-item {
   font-size: 1.1rem;
-  background-color: #f4e3cf; /* Beige background */
-  color: #6f4f32; /* Darker brownish-gray text */
+  background-color: #1b263b; /* Deep navy blue background */
+  color: #a8b5c3; /* Soft blue-gray text */
   margin-bottom: 12px;
   padding: 12px;
   border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .skills-item:hover {
-  background-color: #d7bba8; /* Slightly darker beige for hover effect */
-  color: #fff;
+  background-color: #415a77; /* Steel blue for hover */
+  color: #e0e1dd; /* Silver text for hover */
   cursor: pointer;
 }
 
