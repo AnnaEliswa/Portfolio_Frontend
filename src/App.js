@@ -4,9 +4,7 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import UUVProject from './components/UUVProject';
-import FPGAProject from './components/FPGAProject';
-import SignLanguageProject from './components/SignLanguageProject';
+import ProjectDetails from './components/ProjectDetails'; // Importing the new ProjectDetails component
 import './App.css';
 
 const App = () => {
@@ -40,10 +38,8 @@ const App = () => {
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             
-            {/* Project-Specific Routes */}
-            <Route path="/projects/uuv" element={<UUVProject />} />
-            <Route path="/projects/fpga" element={<FPGAProject />} />
-            <Route path="/projects/sign-language" element={<SignLanguageProject />} />
+            {/* Dynamic Project Route */}
+            <Route path="/projects/:projectId" element={<ProjectDetails />} /> {/* Updated to use dynamic routing */}
           </Routes>
         </div>
         <footer className="mt-auto py-3 bg-dark text-white text-center">

@@ -1,53 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Projects.css';
-import FPGAImage from '../assets/FPGA.jpg';
-import UUV from '../assets/UUV.jpg';
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch all projects
+  const fetchProjects = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/projects'); // Replace with your backend endpoint
+      setProjects(response.data);
+    } catch (err) {
+      setError(err.message || 'Failed to fetch projects');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  if (loading) {
+    return <div className="loading">Loading projects...</div>;
+  }
+
+  if (error) {
+    return <div className="error">Error: {error}</div>;
+  }
+
   return (
     <div className="projects-container py-5">
       <h2 className="projects-title text-center">My Projects</h2>
       <div className="row">
-        {/* Project 1 */}
-        <div className="col-md-4">
-          <div className="card">
-            <img src={UUV} className="card-img-top" alt="UUV Project" />
-            <div className="card-body">
-              <h5 className="card-title">Unmanned Underwater Vehicle</h5>
-              
-              <Link to="/projects/uuv" className="btn btn-primary">Learn More</Link>
+        {projects.map((project) => (
+          <div key={project.id} className="col-md-4">
+            <div className="card">
+              <img
+                src={`data:image/jpeg;base64,${project.image}`}
+                className="card-img-top"
+                alt={project.title}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{project.title}</h5>
+                <Link to={`/projects/${project.id}`} className="btn btn-primary">
+                  Learn More
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Project 2 */}
-        <div className="col-md-4">
-          <div className="card">
-            <img src={FPGAImage} className="card-img-top" alt="FPGA Project" />
-            <div className="card-body">
-              <h5 className="card-title">Smart FPGA Car Parking System</h5>
-              
-              <Link to="/projects/fpga" className="btn btn-primary">Learn More</Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Project 3 */}
-        <div className="col-md-4">
-          <div className="card">
-            <img
-              src="https://assets.rbl.ms/25583540/origin.jpg"
-              className="card-img-top"
-              alt="Sign Language Project"
-            />
-            <div className="card-body">
-              <h5 className="card-title">Sign Language to Speech Converter</h5>
-              
-              <Link to="/projects/sign-language" className="btn btn-primary">Learn More</Link>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
