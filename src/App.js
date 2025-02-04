@@ -1,13 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import ProjectDetails from './components/ProjectDetails'; // Importing the new ProjectDetails component
+import ProjectDetails from './components/ProjectDetails';
+import AdminPanel from './components/AdminPanel';
+import Login from './components/Login';
+import Cookies from 'js-cookie';
 import './App.css';
 
 const App = () => {
+  const [authenticated, setAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if user is already authenticated from cookies
+    setAuthenticated(Cookies.get("auth") === "true");
+  }, []);
+
   return (
     <Router>
       <Navbar />
@@ -39,7 +49,22 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             
             {/* Dynamic Project Route */}
-            <Route path="/projects/:projectId" element={<ProjectDetails />} /> {/* Updated to use dynamic routing */}
+            <Route path="/projects/:projectId" element={<ProjectDetails />} />
+
+            {/* Admin Panel - Protected Route */}
+            <Route
+              path="/admin"
+              element={
+                authenticated ? (
+                  <AdminPanel />
+                ) : (
+                  <Navigate to="/login" replace />
+                )
+              }
+            />
+            
+            {/* Login Route - Pass setAuthenticated */}
+            <Route path="/login" element={<Login setAuthenticated={setAuthenticated} />} />
           </Routes>
         </div>
         <footer className="mt-auto py-3 bg-dark text-white text-center">
