@@ -60,7 +60,7 @@ const AdminPanel = () => {
   const handleAddUser = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/users", formData, {
+      const response = await axios.post("http://localhost:8080/api/auth/register", formData, {
         withCredentials: true,
       });
 
