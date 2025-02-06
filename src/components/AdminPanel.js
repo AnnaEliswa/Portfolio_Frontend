@@ -42,26 +42,6 @@ const AdminPanel = () => {
   }, [navigate]);
   
 
-  // Fetch data when category or auth state changes
- 
-
-  // const fetchData = async () => {
-  //   try {
-  //     const url = `http://localhost:8080/api/${selectedCategory}`;
-  //     const response = await axios.get(url, { withCredentials: true });
-  //     setData(response.data);
-  //     setError("");
-  //   } catch (error) {
-  //     console.error("Error fetching data", error);
-  //     setError("Failed to fetch data. Please try again later.");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //     fetchData();
-  //   }
-  // }, [isAuthenticated, selectedCategory, fetchData]);
 
  
 
@@ -110,6 +90,7 @@ useEffect(() => {
     }
   };
   
+
   const handleAddProject = async (e) => {
     e.preventDefault();
     const formData = new FormData();

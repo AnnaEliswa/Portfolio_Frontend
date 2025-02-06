@@ -14,10 +14,10 @@ const App = () => {
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Check if user is already authenticated from cookies
-    setAuthenticated(Cookies.get("auth") === "true");
+    // Check if the auth cookie exists
+    const authCookie = Cookies.get("auth");
+    setAuthenticated(authCookie === "true"); // Update authentication state based on cookie
   }, []);
-
   return (
     <Router>
       <Navbar />
@@ -52,7 +52,7 @@ const App = () => {
             <Route path="/projects/:projectId" element={<ProjectDetails />} />
 
             {/* Admin Panel - Protected Route */}
-            <Route
+            {/* <Route
               path="/admin"
               element={
                 authenticated ? (
@@ -61,10 +61,19 @@ const App = () => {
                   <Navigate to="/login" replace />
                 )
               }
-            />
+            /> */}
             
             {/* Login Route - Pass setAuthenticated */}
-            <Route path="/login" element={<Login setAuthenticated={setAuthenticated} />} />
+            {/* <Route path="/login" element={<Login setAuthenticated={setAuthenticated} />} /> */}
+
+            {/* If authenticated, redirect from /login to /admin */}
+            <Route path="/login" element={authenticated ? <Navigate to="/admin" replace /> : <Login setAuthenticated={setAuthenticated} />} />
+
+            {/* Protected admin route */}
+            <Route path="/admin" element={authenticated ? <AdminPanel /> : <Navigate to="/login" replace />} />
+
+            {/* Default route */}
+            {/* <Route path="*" element={<Navigate to={authenticated ? "/admin" : "/login"} />} /> */}
           </Routes>
         </div>
         <footer className="mt-auto py-3 bg-dark text-white text-center">

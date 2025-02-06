@@ -5,12 +5,10 @@ import "./Sidebar.css";
 const Sidebar = ({ onCategoryChange, selectedCategory }) => {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    // Clear the auth cookie
-    Cookies.remove("auth");
 
-    // Redirect to login page
-    navigate("/login");
+  const handleLogout = () => {
+    Cookies.remove("auth"); // Remove the auth cookie
+    navigate("/", { state: { message: "Please enter your credentials." } }); // Redirect with state message
   };
 
   return (

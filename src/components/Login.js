@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie"; 
@@ -10,39 +10,31 @@ const Login = ({ setAuthenticated }) => {
   const [error, setError] = useState("");  
   const navigate = useNavigate();  
 
-  const handleLogin = async (e) => {
-    e.preventDefault();  
+  useEffect(() => {
+    // If user is already authenticated, redirect to /admin
+    if (Cookies.get("auth") === "true") {
+      navigate("/admin");
+    }
+  }, [navigate]);
 
-    setError(""); // Clear previous error message
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError("");
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/auth/login", 
-        { email, password }, 
+        "http://localhost:8080/api/auth/login",
+        { email, password },
         { withCredentials: true }
       );
 
-      console.log("Login Response:", response.data);  // Log the full response data
-
       if (response.status === 200 && response.data.authenticated) {
-        // Set the auth cookie with path and expiration
-      // Cookies.set("auth", "true", { expires: 1 });
-        console.log("Cookies after setting:", document.cookie); // Log cookies after setting
-
-        //Cookies.set("auth", "true", { expires: 1, path: "/", SameSite: "None", Secure: true });
-        Cookies.set("auth", "true", { expires: 1, path: "/" }); // Use this during local development
-
-
-        console.log("Cookie Set: auth = true");
+        Cookies.set("auth", "true", { expires: 1, path: "/" });
 
         setAuthenticated(true);
-
-        // Check if the state was set and then navigate
-        console.log("State set to authenticated:", true);
-        navigate("/admin");  // Redirect to admin page
+        navigate("/admin");
       } else {
         setError("Invalid Credentials");
-        console.log("Invalid credentials");
       }
     } catch (error) {
       console.error("Login error:", error);

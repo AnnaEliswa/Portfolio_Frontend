@@ -413,6 +413,7 @@ h1 {
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  overflow-x: auto;
 }
 
 .table {
@@ -457,7 +458,7 @@ h1 {
 .add-button,
 .edit-button,
 .delete-button {
-  padding: 12px 25px; /* Reduced padding */
+  padding: 8px 16px; /* Reduced padding */
   font-size: 1rem; /* Smaller font size */
   border-radius: 8px;
   cursor: pointer;
@@ -467,7 +468,6 @@ h1 {
   color: #e0e1dd;
   text-align: center;
 }
-
 /* Cancel Button (Blue) */
 .cancel-button {
   background-color: #007bff; /* Blue */
@@ -523,7 +523,6 @@ h1 {
 .delete-button:focus {
   outline: 2px solid #bd2130;
 }
-
 /* Form Styling */
 .form-group {
   display: flex;
